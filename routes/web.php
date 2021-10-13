@@ -27,7 +27,7 @@ Route::get('/login', [LoginController::class,'showLogin'])->name('showLogin');
 Route::post('/login', [LoginController::class,'Login'])->name('login');
 
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
-Route::middleware('auth')->prefix('/')->group(function () {
+Route::middleware('auth')->prefix('/dashboard')->group(function () {
     Route::get('/', function () {
         return view('layout.dashboard');
         })->name('dashboard');
